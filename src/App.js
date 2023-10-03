@@ -1,23 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import Movie from "./Components/Movie";
+import { movies } from "./MovieDummy";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App" style={{ display: "flex", flexWrap: "wrap" }}>
+      {movies.results.map((item) => {
+        const imageUrl = `https://image.tmdb.org/t/p/w500${item.poster_path}`;
+        return (
+          <Movie
+            title={item.title}
+            average={item.vote_average}
+            overview={item.overview}
+            poster={imageUrl}
+          />
+        );
+      })}
     </div>
   );
 }
