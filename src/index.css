@@ -1,7 +1,11 @@
-* {
+/* * {
   background-color: #15143d;
+} */
+* {
+  margin: 0;
 }
-.movie {
+
+/* .movie {
   display: flex;
   flex-direction: row;
   margin-left: 30px;
@@ -14,9 +18,9 @@
   flex-direction: column;
   align-items: center;
   position: relative;
-}
+} */
 
-.poster {
+/* .poster {
   width: 300px;
 }
 
@@ -68,4 +72,4 @@
 
 .movie:hover .movie-modal {
   opacity: 1;
-}
+} */

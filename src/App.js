@@ -1,20 +1,22 @@
-import Movie from "./Components/Movie/Movie";
-import { movies } from "./MovieDummy";
+import Celebrity from './pages/Celebrity';
+import Movies from './pages/Movies';
+import TV from './pages/TV';
+import Header from './Components/Header';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Home from './pages/Home';
 
 function App() {
   return (
-    <div className="App" style={{ display: "flex", flexWrap: "wrap" }}>
-      {movies.results.map((item) => {
-        const imageUrl = `https://image.tmdb.org/t/p/w500${item.poster_path}`;
-        return (
-          <Movie
-            title={item.title}
-            average={item.vote_average}
-            overview={item.overview}
-            poster={imageUrl}
-          />
-        );
-      })}
+    <div className="App" >
+      <BrowserRouter>
+        <Header/>
+      <Routes>
+        <Route path='/' element={Home}/>
+        <Route path='/movie' element={Movies}/>
+        <Route path='/tv' element={TV}/>
+        <Route path='/person' element={Celebrity}/>
+      </Routes>
+      </BrowserRouter>
     </div>
   );
 }
