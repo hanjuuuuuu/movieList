@@ -1,14 +1,22 @@
 import React from "react";
 import Movie from "../Components/Movie";
 import { movies } from "../MovieDummy";
+import styled from "styled-components";
+
+const MoviesGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+`;
 
 const Movies = () => {
   return (
-    <div>
+    <MoviesGrid>
       {movies.results.map((item) => {
         const imageUrl = `https://image.tmdb.org/t/p/w500${item.poster_path}`;
         return (
           <Movie
+            key={item.id}
             title={item.title}
             average={item.vote_average}
             overview={item.overview}
@@ -17,7 +25,7 @@ const Movies = () => {
           />
         );
       })}
-    </div>
+    </MoviesGrid>
   );
 };
 

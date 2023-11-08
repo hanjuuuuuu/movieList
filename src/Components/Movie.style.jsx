@@ -43,9 +43,10 @@ export const OverviewOverlay = styled.div`
 
 export const MovieContainer = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   margin-left: 30px;
   margin-top: 30px;
+  width: 300px;
 
   &:hover ${MovieModal} {
     opacity: 1;

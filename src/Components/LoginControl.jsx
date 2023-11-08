@@ -1,40 +1,52 @@
-import React, { Component } from 'react';
-import styled from 'styled-components';
+import React, { useState } from "react";
+import styled from "styled-components";
 
-class LoginControl extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { isLoggedIn: false };
-  }
+// hook 사용 전
+// class LoginControl extends Component {
+//   constructor(props) {
+//     super(props);
+//     this.state = { isLoggedIn: false };
+//   }
 
-  handleLoginClick = () => {
-    this.setState({ isLoggedIn: true });
-  }
+//   handleLoginClick = () => {
+//     this.setState({ isLoggedIn: true });
+//   }
 
-  handleLogoutClick = () => {
-    this.setState({ isLoggedIn: false });
-  }
+//   handleLogoutClick = () => {
+//     this.setState({ isLoggedIn: false });
+//   }
 
-  render() {
-    const isLoggedIn = this.state.isLoggedIn;
+//   render() {
+//     const isLoggedIn = this.state.isLoggedIn;
 
-    return (
-        <Container>
-        {isLoggedIn ? (
-          <>
-            <LoginButton onClick={this.handleLogoutClick}>로그아웃</LoginButton>
-            <Message>환영합니다!</Message>
-          </>
-        ) : (
-          <>
-            <LoginButton onClick={this.handleLoginClick}>로그인</LoginButton>
-            <Message>로그인 해주세요!</Message>
-          </>
-        )}
-      </Container>
-    );
-  }
-}
+//useState 사용
+const LoginControl = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  const handleLoginClick = () => {
+    setIsLoggedIn(true);
+  };
+
+  const handleLogoutClick = () => {
+    setIsLoggedIn(false);
+  };
+
+  return (
+    <Container>
+      {isLoggedIn ? (
+        <>
+          <LoginButton onClick={handleLogoutClick}>로그아웃</LoginButton>
+          <Message>환영합니다!</Message>
+        </>
+      ) : (
+        <>
+          <LoginButton onClick={handleLoginClick}>로그인</LoginButton>
+          <Message>로그인 해주세요!</Message>
+        </>
+      )}
+    </Container>
+  );
+};
 
 export default LoginControl;
 
@@ -59,4 +71,3 @@ const Container = styled.div`
   display: flex;
   align-items: center;
 `;
-
