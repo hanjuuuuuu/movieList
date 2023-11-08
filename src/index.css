@@ -5,12 +5,13 @@
   margin: 0;
 }
 
-/* .movie {
+.movie {
   display: flex;
   flex-direction: row;
   margin-left: 30px;
   margin-top: 30px;
-}
+  flex-wrap: wrap;
+} 
 
 .movie-container {
   border: none;
@@ -18,9 +19,10 @@
   flex-direction: column;
   align-items: center;
   position: relative;
-} */
+  width: 300px;
+} 
 
-/* .poster {
+.poster {
   width: 300px;
 }
 
@@ -62,6 +64,8 @@
   opacity: 0;
   transition: opacity 0.3s;
   z-index: 1;
+  align-items: center;
+  justify-content: center;
 }
 
 .overview-overlay {
@@ -72,4 +76,4 @@
 
 .movie:hover .movie-modal {
   opacity: 1;
-} */
+}

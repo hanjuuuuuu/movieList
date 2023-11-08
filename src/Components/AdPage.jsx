@@ -1,7 +1,7 @@
 import React from 'react'
+import { ReactComponent as logoImageUrl } from '../img/Untitled.svg';
 
 const AdPage = ({ showAd }) => {
-    const logoImageUrl = '../img/Untitled.svg'
   return (
     <div>
         {showAd ? <img src={logoImageUrl}/> : null}

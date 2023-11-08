@@ -4,6 +4,7 @@ import TV from './pages/TV';
 import Header from './Components/Header';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
+import MovieDetail from './pages/MovieDetail';
 
 function App() {
   return (
@@ -11,10 +12,11 @@ function App() {
       <BrowserRouter>
         <Header/>
       <Routes>
-        <Route path='/' element={Home}/>
-        <Route path='/movie' element={Movies}/>
-        <Route path='/tv' element={TV}/>
-        <Route path='/person' element={Celebrity}/>
+        <Route path='/' element={<Home/>}/>
+        <Route path='/movie' element={<Movies/>}/>
+        <Route path='/tv' element={<TV/>}/>
+        <Route path='/person' element={<Celebrity/>}/>
+        <Route path="/movie/:title" element={<MovieDetail/>} />
       </Routes>
       </BrowserRouter>
     </div>
