@@ -6,7 +6,8 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import MovieDetail from "./pages/MovieDetail";
 import NotFound from "./pages/NotFound";
-import Login from "./pages/Login";
+//import Login from "./pages/Login";
+import ApiLogin from "./pages/ApiLogin";
 
 function App() {
   return (
@@ -19,7 +20,7 @@ function App() {
           <Route path="/tv" element={<TV />} />
           <Route path="/person" element={<Celebrity />} />
           <Route path="/movie/:title" element={<MovieDetail />} />
-          <Route path="/login" element={<Login />} />
+          <Route path="/login" element={<ApiLogin />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
